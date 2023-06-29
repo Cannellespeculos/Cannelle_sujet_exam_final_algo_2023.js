@@ -12,7 +12,8 @@ import { twoDimensions } from "./main.js";
 import { index } from "./main.js";
 import { premier } from "./main.js";
 import { reverseOrder } from "./main.js";
-
+import { DeuxiemePlusGrand } from "./main.js";
+import { anagramme } from "./main.js";
 
 
 describe("verifier", () => {
@@ -107,9 +108,24 @@ describe("premier", () => {
 })
 
 
-// describe("reverseOrder", () => {
+describe("reverseOrder", () => {
+    it("c", () => {
+        expect(reverseOrder("oui et toi patrick")).toBe("toi et oui")
+
+    })
+})
+
+
+describe("DeuxièmePlusGrand", () => {
+    it("c", () => {
+        expect(DeuxiemePlusGrand([5, 6, 2, 9, 23])).toBe(9)
+
+    })
+})
+
+// describe("anagramme", () => {
 //     it("c", () => {
-//         expect(reverseOrder("oui et toi")).toBe("toi et oui")
+//         expect(anagramme("La crise économique", "Le scénario comique")).toBe(true)
 
 //     })
 // })

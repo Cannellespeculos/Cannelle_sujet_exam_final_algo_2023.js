@@ -1,6 +1,7 @@
 import './style.css'
 
-
+// pour utiliser les test unitaires il faut taper dans le terminal 
+// npm run test ou npm run test:run
 
 // EXO 1 :
 // Écrivez une fonction qui prend deux nombres en argument
@@ -45,9 +46,8 @@ console.log(reverse("test"))
 export function palindrome(n) {
     if (reverse(n) === n) {
         return true
-    } else {
-        return false
     }
+    return false
 }
 
 
@@ -58,7 +58,12 @@ export function palindrome(n) {
 export function factoriel(num) {
     let total = 0
     for (let i = 1; i <= num; i++) {
-        total += i * (i + 1)
+        if (i === 1) {
+            total += i * (i + 1)
+        }
+
+        total += (i + 2)
+
 
     }
     return total
@@ -93,6 +98,23 @@ export function premier(num) {
 // Écrivez une fonction retourne vrai si deux chaînes de caractères sont des anagrammes l'une de l'autre ou faux dans le cas contraire.
 // https://fr.wikipedia.org/wiki/Anagramme
 
+export function anagramme(firststr, secondstr) {
+
+    for (let i = 0; i < firststr.length; i++) {
+        let fi = firststr[i]
+        if (!secondstr.includes[fi]) {
+            console.log
+            return false
+        }
+
+    }
+
+    return true
+
+}
+
+console.log(anagramme("kayak", "kayak"))
+
 // EXO 8 :
 // Écrivez une fonction pour déterminer si une chaîne de caractères donnée ne contient que des caractères uniques.
 // f("test") retourne faux car le caractère t est présente 2 fois
@@ -117,6 +139,28 @@ export function unique(stri) {
 // EXO 9 :
 // Implémentez une fonction qui retourne le deuxieme plus grand élément d'un tableau de nombre entier.
 // f([5,6,2,9,23]) retourne 9 car 23 est le plus grand et 9 est le deuxieme plus grand
+
+export function DeuxiemePlusGrand(arr) {
+    let premier = arr[0]
+    let second = arr[1]
+    let actuel;
+    if (premier < second) {
+        premier = arr[1]
+        second = arr[0]
+    }
+
+    for (let i = 3; i < arr.length; i++) {
+        if (arr[i] > premier) {
+            actuel = second
+            second = premier
+            premier = arr[i]
+        } else if (arr[i] > second) {
+            second = arr[i]
+        }
+
+    }
+    return second
+}
 
 // EXO 10 :
 // Écrivez une fonction pour calculer la somme de tous les nombres pairs d'un tableau.
@@ -159,7 +203,7 @@ export function reverseOrder(string) {
     return result
 }
 
-reverseOrder("oui et toi")
+
 
 
 // EXO 12 :
